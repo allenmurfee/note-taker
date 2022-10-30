@@ -1,4 +1,5 @@
 const notes = require("express").Router();
+const path = require('path');
 
 notes.get("/", (req, res) => {
   console.log("firing");
