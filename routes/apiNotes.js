@@ -7,3 +7,5 @@ apiNotes.get("/", (req, res) => {
 apiNotes.post("/", (req, res) => {
     console.log(req.body);
 })
+
+module.exports = apiNotes; 
