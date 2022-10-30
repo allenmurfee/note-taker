@@ -11,7 +11,27 @@ apiNotes.get("/", (req, res) => {
 });
 
 apiNotes.post("/", (req, res) => {
-    console.log(req.body);
-})
+  console.log(req.body);
+  const { title, test } = req.body;
+
+  if (title && test) {
+    const newNote = {
+      title,
+      test,
+    };
+
+    const newNotePost = JSON.stringify(newNote);
+    fs.writeFile("../db/db.json", newNotePost, (err) =>
+      err
+        ? console.error(err)
+        : console.log(
+            `Review for ${newNote.title} has been written to JSON file`
+          )
+    );
+    res.status(201).json("Success");
+  } else {
+    res.status(500).json("Error in writing note");
+  }
+});
 
 module.exports = apiNotes;
