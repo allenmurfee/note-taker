@@ -48,9 +48,11 @@ apiNotes.delete("/:id", (req, res) => {
   fs.readFile(path.join(__dirname, "../db/db.json"), "utf8", (err, data) => {
     if (err) throw err;
     console.log(data);
-    console.log(data[1].id);
+    // console.log(data[1].id);
     console.log(paramId);
     //Need to remove from JSON file
+    let findId = data.filter((id) => res.data.id == paramId);
+    console.log(findId);
   });
 });
 module.exports = apiNotes;
