@@ -15,15 +15,11 @@ apiNotes.post("/", (req, res) => {
   // console.log(req.body);
   const { title, text } = req.body;
 
-  const id = uuidv4();
-
-  console.log(id);
-
   if (req.body) {
     const newNote = {
       title,
       text,
-      id,
+      id: uuidv4(),
     };
     fs.readFile(path.join(__dirname, "../db/db.json"), "utf8", (err, data) => {
       if (err) throw err;
@@ -45,6 +41,10 @@ apiNotes.post("/", (req, res) => {
   } else {
     res.status(500).json("Error in writing note");
   }
+});
+
+apiNotes.delete("/:id", (req, res) => {
+  const paramID = req.params.id;
 });
 
 module.exports = apiNotes;
