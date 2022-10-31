@@ -5,7 +5,7 @@ const { v4: uuidv4 } = require("uuid");
 // const notes = require("../db/db.json");
 
 apiNotes.get("/", (req, res) => {
-  fs.readFile(path.join(__dirname, "../db/db.json"), (err, data) => {
+  fs.readFile(path.join(__dirname, "../db/db.json"), "utf8", (err, data) => {
     if (err) throw err;
     res.json(JSON.parse(data));
   });
@@ -44,7 +44,13 @@ apiNotes.post("/", (req, res) => {
 });
 
 apiNotes.delete("/:id", (req, res) => {
-  const paramID = req.params.id;
+  const paramId = req.params.id;
+  fs.readFile(path.join(__dirname, "../db/db.json"), "utf8", (err, data) => {
+    if (err) throw err;
+    console.log(data);
+    console.log(data[1].id);
+    console.log(paramId);
+    //Need to remove from JSON file
+  });
 });
-
 module.exports = apiNotes;
