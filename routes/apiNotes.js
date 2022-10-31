@@ -12,22 +12,26 @@ apiNotes.get("/", (req, res) => {
 
 apiNotes.post("/", (req, res) => {
   console.log(req.body);
-  const { title, test } = req.body;
+  var dataArray = [];
+  const { title, text } = req.body;
 
-  if (title && test) {
+  if (req.body) {
     const newNote = {
       title,
-      test,
+      text,
     };
+    fs.readFile(path.join(__dirname, "../db/db.json"), (data, err) => {
+      if (err) throw err;
+      console.log(data);
 
-    const newNotePost = JSON.stringify(newNote);
-    fs.writeFile("../db/db.json", newNotePost, (err) =>
-      err
-        ? console.error(err)
-        : console.log(
-            `Review for ${newNote.title} has been written to JSON file`
-          )
-    );
+      //   fs.writeFile("./db/db.json", JSON.stringify(dataArray), (err) =>
+      //     err
+      //       ? console.error(err)
+      //       : console.log(
+      //           `Review for ${newNote.title} has been written to JSON file`
+      //         )
+      //   );
+    });
     res.status(201).json("Success");
   } else {
     res.status(500).json("Error in writing note");
