@@ -2,7 +2,7 @@ const apiNotes = require("express").Router();
 const fs = require("fs");
 const path = require("path");
 const notes = require("../db/db.json");
-// var dataArray = [];
+
 
 apiNotes.get("/", (req, res) => {
   fs.readFile(path.join(__dirname, "../db/db.json"), (err, data) => {
@@ -23,18 +23,11 @@ apiNotes.post("/", (req, res) => {
     fs.readFile(path.join(__dirname, "../db/db.json"), "utf8", (err, data) => {
       if (err) throw err;
 
-      console.log(data)
+      console.log(data);
 
       const parsedNotes = JSON.parse(data);
       parsedNotes.push(newNote);
-      // const stringData = JSON.stringify(data);
-      // console.log(data);
-      // console.log(stringData)
-      // dataArray.push(stringData);
-      // console.log(dataArray);
-      // const stringNote = JSON.stringify(newNote);
-      // dataArray.push(stringNote);
-      // console.log(dataArray);
+ 
 
       fs.writeFile("./db/db.json", JSON.stringify(parsedNotes), (err) =>
         err
