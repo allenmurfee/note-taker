@@ -1,9 +1,8 @@
 const apiNotes = require("express").Router();
 const fs = require("fs");
 const path = require("path");
-const { v4: uuidv4 } = require('uuid');
+const { v4: uuidv4 } = require("uuid");
 // const notes = require("../db/db.json");
-
 
 apiNotes.get("/", (req, res) => {
   fs.readFile(path.join(__dirname, "../db/db.json"), (err, data) => {
@@ -16,15 +15,15 @@ apiNotes.post("/", (req, res) => {
   // console.log(req.body);
   const { title, text } = req.body;
 
-  const unique = uuidv4();
+  const id = uuidv4();
 
-  console.log(unique);
+  console.log(id);
 
   if (req.body) {
     const newNote = {
       title,
-      text, 
-      unique
+      text,
+      id,
     };
     fs.readFile(path.join(__dirname, "../db/db.json"), "utf8", (err, data) => {
       if (err) throw err;
@@ -33,7 +32,6 @@ apiNotes.post("/", (req, res) => {
 
       const parsedNotes = JSON.parse(data);
       parsedNotes.push(newNote);
- 
 
       fs.writeFile("./db/db.json", JSON.stringify(parsedNotes), (err) =>
         err

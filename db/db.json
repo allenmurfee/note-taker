@@ -1,1 +1,17 @@
-[{"title":"Test Title","text":"Test text"},{"title":"2 ","text":"222222","unique":"3d95705d-2dd4-4ed8-9c98-4defda4463a2"},{"title":"3","text":"3333333","unique":"ee34e0d8-df41-405e-81f2-532cbd709c08"}]
+[
+  {
+    "title": "Note with ID",
+    "text": "Text with ID",
+    "id": "691c3ac9-c7c1-437a-ab97-16431d05d709"
+  },
+  {
+    "title": "This is note 2",
+    "text": "This is the description of note 2.",
+    "id": "687fb8ad-6a22-45da-a335-8a570ecbeb94"
+  },
+  {
+    "title": "This is note 3",
+    "text": "Description of note 3. ",
+    "id": "de976a39-713a-44de-b499-fa183ca8b051"
+  }
+]
