@@ -12,9 +12,9 @@ You don't need to install this project. Just visit the deployed application on H
 
 ## Usage
 
-You can visit the deployed application here (need link) and create your notes by clicking the "Get Started" button. From there, you can type in your note title and text, and click the Save button in the top right. You can access all your notes by clicking them on the left-hand side, and delete them by pressing the Trashcan button. 
+You can visit the deployed application here (need link) and create your notes by clicking the "Get Started" button. From there, you can type in your note title and text, and click the Save button in the top right. You can access all your notes by clicking them on the left-hand side, and delete them by pressing the Trashcan button.
 
-![Project screenshot](./assets/screenshot.png)
+![Project screenshot](/public/assets/screenshot.png)
 
 Additionally, here is a [tutorial video](need link) to demonstrate how the application works.
 
