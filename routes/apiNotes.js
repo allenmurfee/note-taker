@@ -49,8 +49,13 @@ apiNotes.delete("/:id", (req, res) => {
     if (err) throw err;
     //Need to remove from JSON file
     let parseData = JSON.parse(data);
-    let findId = parseData.filter((parseData) => parseData.id == paramId);
-    console.log(findId);
+    let removeNote = parseData.filter((parseData) => parseData.id !== paramId);
+    console.log(removeNote);
+    fs.writeFile("./db/db.json", JSON.stringify(removeNote), (err) =>
+      err
+        ? console.error(err)
+        : console.log(`Note has been deleted from JSON file.`)
+    );
   });
 });
 module.exports = apiNotes;
