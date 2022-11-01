@@ -16,8 +16,6 @@ You can visit the deployed application here (need link) and create your notes by
 
 ![Project screenshot](/public/assets/screenshot.png)
 
-Additionally, here is a [tutorial video](need link) to demonstrate how the application works.
-
 ## Credits
 
 AskBCS for helping with Express questions.
