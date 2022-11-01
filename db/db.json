@@ -1,12 +1,1 @@
-[
-  {
-    "title": "Note with ID",
-    "text": "Text with ID",
-    "id": "691c3ac9-c7c1-437a-ab97-16431d05d709"
-  },
-  {
-    "title": "I'm adding to JSON file",
-    "text": "This is text",
-    "id": "19e276fa-7662-409d-92b8-bb917c0186b0"
-  }
-]
+[{"title":"This is note 1","text":"This is the text for note 1","id":"35823383-1735-416a-8749-bbd0d6222594"},{"title":"This is note 2","text":"This is the text for note 2","id":"9ac591cc-582b-42c3-823e-bfb72daa2c94"},{"title":"This is note 3 ","text":"This is the text for note 3","id":"35423a9f-1afe-4a09-b687-e2f4d62853ac"}]
