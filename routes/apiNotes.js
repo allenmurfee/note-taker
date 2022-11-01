@@ -47,11 +47,9 @@ apiNotes.delete("/:id", (req, res) => {
   const paramId = req.params.id;
   fs.readFile(path.join(__dirname, "../db/db.json"), "utf8", (err, data) => {
     if (err) throw err;
-    console.log(data);
-    // console.log(data[1].id);
-    console.log(paramId);
     //Need to remove from JSON file
-    let findId = data.filter((id) => res.data.id == paramId);
+    let parseData = JSON.parse(data);
+    let findId = parseData.filter((parseData) => parseData.id == paramId);
     console.log(findId);
   });
 });
